@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title> video 태그를 이용한 영상 삽입 </title>
+</head>
+<body>
+    <!-- 
+        ==video 속성설명==
+        ▶ src 동영상 파일 경로
+        ▶ poster 동영상이 화면에 나타나지 않을 경우 대신 표시할 그림
+        ▶ preload 미리 다운로드 받아 재생단추를 눌렀을때 재생되게 함
+        ▶ autoplay 자동 재생
+        ▶ loop 반복 재생 지정
+        ▶ controls 화면에 콘트롤 막대 추가
+        ▶ width 화면의 너비
+        ▶ height 화면의 높이 
+        ▶ muted 오디오를 재생하지만 소리는 끄기
+
+        file 종류
+        MP4 : Edge / IE, Chrome, Firefox, Safari, Opera
+        WebM : Chrome, Firefox, Opera
+        Ogg : Chrome, Firefox, Opera
+     -->
+    <!-- 1) 지원하지 않는 하위 브라우저에 안내멘트만 작성 -->
+    <video poster="images/sunrise.jpg" width="800" height="450" controls>
+        <source src="media/sunrise.mp4" type="video/mp4">
+        <source src="media/sunrise.webm" type="video/webm">
+        <source src="media/sunrise.ogg" type="video/ogg"> <!-- ogv 확장명도 가능 -->
+        현재 브라우저에서는 동영상을 지원하지 못 합니다. 브라우저를 업데이트 해주세요.
+    </video>
+
+    <!-- 2) 하위 브라우저를 위한 object 혹은 embed 태그를 추가 -->
+    <video poster="images/sunrise.jpg" width="800" height="450" controls>
+        <source src="media/sunrise.mp4" type="video/mp4">
+        <source src="media/sunrise.webm" type="video/webm">
+        <source src="media/sunrise.ogg" type="video/ogg"> <!-- ogv 확장명도 가능 -->
+        <embed src="media/sunrise.wmv" type="video/x-ms-wmv" autostart="0" width="800" height="450"> <!-- embed는 자동실행이 기본값이어서 자동실행 멈추기를 추가 autostart="0" -->
+    </video>
+</body>
+</html>
