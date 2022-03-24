@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title> 비디오를 배경으로 처리 </title>
+    <style>
+        body{margin: 0;padding: 0;font-size: 40px;}
+        ul{list-style: none;}
+
+        #videoBg{position: fixed;top: 0;left: 0;width: auto;height: auto;min-width: 100%;min-height: 100%;z-index: -1;}
+        #wrap{width: 1400px;height: 1400px;margin: 0 auto;}
+    </style>
+</head>
+<body>
+    <!-- position: fixed, z-index를 음수로 설정 컨텐츠가 위로 올라갈 수 있도록, 자동실행, 무한반복(용량때문), 음소거, 대체이미지 -->
+    <video id="videoBg" autoplay loop muted poster="images/flame.jpg">
+        <source src="media/flame.mp4" type="video/mp4">
+        <source src="media/flame.webm" type="video/webm">
+        <source src="media/flame.ogv" type="video/ogg">
+    </video>
+    <div id="wrap">
+        <h1>Full video background</h1>
+        <p>본문 내용이 비디오 위로 올라 옵니다.</p>
+        <ul>
+            <li>1) video를 fixed 속성으로 고정합니다.</li>
+            <li>2) 최소너비와 최소높이를 100%로 설정합니다</li>
+            <li>3) 본문내용이 보여질수 있도록 z-index: -1; (음수)로 설정합니다</li>
+    </div>
+</body>
+</html>
